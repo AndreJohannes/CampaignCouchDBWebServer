@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PSYDEH-Donors</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.jqueryui.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.jqueryui.css">
+    <style>
+        label, input {
+            display: block;
+        }
+
+        input.text {
+            margin-bottom: 12px;
+            width: 95%;
+            padding: .4em;
+        }
+
+        fieldset {
+            padding: 0;
+            border: 0;
+            margin-top: 25px;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            margin: .6em 0;
+        }
+
+        div#users-contain {
+            width: 350px;
+            margin: 20px 0;
+        }
+
+        div#users-contain table {
+            margin: 1em 0;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        div#users-contain table td, div#users-contain table th {
+            border: 1px solid #eee;
+            padding: .6em 10px;
+            text-align: left;
+        }
+
+        .ui-dialog .ui-state-error {
+            padding: .3em;
+        }
+
+        .validateTips {
+            border: 1px solid transparent;
+            padding: 0.3em;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="js/jquery.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jquery-ui.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.jqueryui.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.buttons.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/buttons.jqueryui.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.select.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/donors.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jquery.couch.js">
+    </script>
+
+</head>
+<body>
+
+<div id="dialog-form" title="Create new donor">
+    <form>
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location"
+                   class="text ui-widget-content ui-corner-all">
+            <label for="date">Date</label>
+            <input type="text" name="date" id="date"
+                   class="text ui-widget-content ui-corner-all">
+            <label for="Amount">Amount</label>
+            <select name="amount" id="amount">
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+                <option>500</option>
+            </select>
+
+
+           <!-- <input type="text" name="amount" id="amount"
+                   class="text ui-widget-content ui-corner-all">
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
+</div>
+
+<div id="dialog-login" title="Login">
+    <form>
+        <fieldset>
+            <label for="user">Username</label>
+            <input type="text" name="user" id="user" class="text ui-widget-content ui-corner-all">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"
+                   class="text ui-widget-content ui-corner-all">
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
+</div>
+
+<div id="dialog-delete" title="Delete Donor">
+    <p>Do you really want to delete the donor?</p>
+</div>
+
+<div>
+    <table id="donors" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Rev</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Rev</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Amount</th>
+        </tr>
+        </tfoot>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
